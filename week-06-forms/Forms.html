@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Likes and dislike</title>
+  <meta name="author" content="Paul Ezennolim">
+  <link rel="stylesheet" href="Forms.css">
+</head>
+
+<body>
+    <form id="likesDislikesForm" action="submit_form.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name..." required>
+  
+      <fieldset>
+        <legend>Likes</legend>
+        <label for="food">
+          <input type="checkbox" id="food" name="likes[]" value="food"> Food
+        </label>
+  
+        <label for="sports">
+          <input type="checkbox" id="sports" name="likes[]" value="sports"> Sports
+        </label>
+  
+        <label for="movies">
+          <input type="checkbox" id="movies" name="likes[]" value="movies"> Movies
+        </label>
+      </fieldset>
+  
+      <fieldset>
+        <legend>Dislikes</legend>
+        <label for="bugs">
+          <input type="checkbox" id="bugs" name="dislikes[]" value="bugs"> Bugs
+        </label>
+  
+        <label for="rain">
+          <input type="checkbox" id="rain" name="dislikes[]" value="rain"> Rain
+        </label>
+  
+        <label for="traffic">
+          <input type="checkbox" id="traffic" name="dislikes[]" value="traffic"> Traffic
+        </label>
+      </fieldset>
+  
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+
+</html>

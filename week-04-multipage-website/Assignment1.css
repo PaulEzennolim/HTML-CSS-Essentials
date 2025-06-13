@@ -1,0 +1,270 @@
+header {
+    background-image: url('Yellow\ background\ image\ for\ title.jpg'); /* This will allow the title to have a background image */
+    display: inline-block;
+    width: 100%; /* This will adjust the width of the background image*/
+    margin: 0;
+    padding: 10px 0px; /* This will adjust the padding at the top and bottom of the background image */
+    font-style:Arial;
+    font-size: 36px;
+ }
+
+ nav ul {  
+    margin: 0;
+    padding: 10px;
+    border: 1px solid rgb(255, 170, 51);
+    list-style: none;
+    background-image: url('Yellow\ background\ image\ for\ title.jpg'); /* This will allow th list to have a background image */
+  }
+  
+  nav ul li {
+    display: inline;
+    padding-right: 5%;
+  }
+
+  nav ul li a:hover {
+    color:  rgb(255,140,0); /* When user hovers over each list item, the font colour will change */
+}
+
+img {
+    max-width: 100%; /* This will make sure the image does not exceed the container */
+    margin-left: 0; /* This can be used ti adjust margin space */
+    width: 40%;
+    height: auto; /* This will make sure the ratio between width and height is reasonable */
+    transition: transform 0.3s; /* This will add a transition when the user hovers over the image */
+}
+
+img:hover {
+    transform: scale(1.1); /* This increases the size of the image when users hover */
+}
+
+  .pushquote {
+    background-color: #f4f4f4; /* This will set the background color for the class pullquote */
+    padding: 5px; /* This will add padding to the pullquote*/
+    margin: 30px; /*This will create space around the pullquote */
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(255,140,0);
+    text-align: justify;
+}
+ h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+article {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+  body {
+    margin-left: 80px; /* Can adjust the left margin */
+    margin-right: 80px; /* Can adjust the right margin */
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: white
+  }
+  
+  h1, h2 {
+    color: purple; 
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+
+  h4 {
+    color:purple;
+  }
+  
+  p {
+   color: rgb(10,10,50);
+  }
+  
+  table td {
+    color: purple; /* This allows for the table colors to be chnaged */
+    border-spacing: 10px; /* This allows for the border-spacing to be adjusted */
+    width: 0%;
+  }
+  
+  #memberrole {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid rgb(248,248,248);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: purple;
+    color:rgb(248,248,248);
+}
+
+td {
+    background-color: rgb(248,248,248);
+}
+
+tr:hover {
+    background-color:rgb(248,248,248);
+}
+
+.highlight {
+    font-weight: bold;
+    color: #0077cc;
+}
+
+blockquote {
+  font-style: Arial;
+  border-left: 4px solid #333; /* this will Add a left border to the blockquote */
+  padding-left: 15px;
+  margin: 15px 0;
+}
+
+/* If the screen size goes above 500px the table will look like this */
+@media (max-width: 500px) {
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    th {
+        text-align: center;
+        background-color: purple;
+        color: rgb(248,248,248);
+    }
+
+    td {
+        text-align: left;
+        background-color: rgb(248,248,248);
+        margin-bottom: 5px;
+    }
+}
+  footer{
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  article {
+    border-bottom: 1px solid grey; /* This will add a black border at the bottom of each article */
+    padding-bottom: 20px; 
+  }
+  
+  article h1 {
+    font-size: 18px; /* Adjusting font size */
+  }
+  
+  table {
+    padding-left: 100px; /* Adjusting the padding */
+    padding-right: 100px; /* Adjusting the padding */
+  }
+
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formstyling {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"], input[type="reset"] {
+    background-color: rgb(255,140,0);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: purple;
+}
+
+footer {
+    background-image: url('Yellow\ background\ image\ for\ title.jpg');
+    padding: 5px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: purple;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+  }
+  
+  footer p {
+    color: black;
+    margin: 10px 0;
+  }
+
+  .quiz-styling {
+    max-width: 700px;
+    margin: 5 auto;
+  }
+
+  .questions {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .option2 {
+    margin: 5px;
+  }

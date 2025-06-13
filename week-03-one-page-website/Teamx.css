@@ -1,0 +1,131 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, table, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the entire body */
+body {
+    background-color: #121212; /* Dark background color */
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: colorChange 3s infinite alternate; /* Apply the animation */
+}
+
+/* Style the header */
+header {
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* Style the main heading with ID 'teamx' */
+header #teamx {
+    color: #FFD700; /* Gold color */
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0; /* Add some space around the heading */
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style-type: none; /* Remove list bullets */
+    display: flex;
+    justify-content: center;
+    background-color: #404040; /* Dark gray background color */
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+}
+
+nav li {
+    margin: 0 15px; /* Add space between menu items */
+}
+
+nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #FFFFFF; /* White text color */
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out; /* Add transition effect */
+}
+
+/* Add hover effect */
+nav a:hover {
+    color: #FF6347; /* Light coral color on hover */
+}
+
+/* Style paragraphs in different sections */
+main h1 {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow to h1 elements */
+}
+
+/* Style paragraphs in different sections */
+main p {
+    background-color: #404040; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 15px;
+    margin: 15px 0; /* Add space above and below paragraphs */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+}
+
+/* Style the table */
+main table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+main th, main td {
+    border: 1px solid #666; /* Medium gray border color */
+    padding: 15px;
+    text-align: left;
+}
+
+main th {
+    background-color: #FFD700; /* Gold background color */
+    color: #FFFFFF; /* White text color */
+}
+
+/* Style the back-to-top link in the footer */
+footer p a[href="#teamx"] {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    color: #FFD700; /* Gold color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Add transition effect */
+}
+
+/* Change link color on hover */
+footer p a[href="#teamx"]:hover {
+    color: #FF6347; /* Light coral color on hover */
+}
+
+/* Add hover effect and transition to the image */
+.hover-effect {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+    transform: scale(1.1); /* Increase the scale on hover */
+}
+
+/* Define the colorChange animation */
+@keyframes colorChange {
+    from {
+        background-color: #121212; /* Initial background color */
+    }
+    to {
+        background-color: #404040; /* Target background color */
+    }
+}
+
+#wrapper {
+    width: 80%;
+    background-color: rgb(235,245,255);
+    margin: 0 auto;
+  }

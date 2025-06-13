@@ -1,0 +1,27 @@
+h1 {
+    color: blue;
+    background-color: orange;
+}
+
+.highlight {
+    color: blue;
+    font-style: italic;
+    padding: 10px;
+}
+
+.redgrey {
+    background-color: rgb(220, 220, 220);
+    color: red;
+}
+
+.largegreenfont {
+    font-family: Calibri, sans-serif;
+    font-size: 3em;
+    color: green;
+}
+
+/* New rule for styling the special-word class */
+.special-word {
+    font-weight: bold;
+    color: purple;
+}
