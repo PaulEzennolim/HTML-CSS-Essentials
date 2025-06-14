@@ -18,6 +18,12 @@ Practical implementation of HTML and CSS to create a structured, visually appeal
 ### Week 04 - Multi-page Website
 Advanced exercises building a comprehensive, accessible, multi-page website, covering navigation, page linking, and responsive design.
 
+### Week 05 - Responsive Web Design
+Applies responsive design principles and media queries for cross-device compatibility.
+
+### Week 06 - Forms
+Implements styled and accessible forms for collecting user input.
+
 ## How to Use
 
 1. Clone this repository.
