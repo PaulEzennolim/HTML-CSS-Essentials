@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Design Mockup: Mobile and Desktop Wireframes -->
+  <rect width="800" height="500" rx="6" fill="#f7f5f2"/>
+  <text x="400" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1a3a5c">Responsive Design Mockups</text>
+
+  <!-- MOBILE MOCKUP (left side) -->
+  <text x="130" y="55" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5a5a">Mobile (&lt; 600px)</text>
+  <!-- Phone frame -->
+  <rect x="55" y="65" width="150" height="420" rx="16" fill="#2c2c2c" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="62" y="80" width="136" height="390" rx="4" fill="#f7f5f2"/>
+  
+  <!-- Mobile header with hamburger -->
+  <rect x="62" y="80" width="136" height="30" fill="#1a3a5c"/>
+  <text x="90" y="99" font-family="sans-serif" font-size="8" fill="#f7f5f2">SSLC</text>
+  <rect x="173" y="90" width="14" height="2" fill="#f7f5f2"/>
+  <rect x="173" y="94" width="14" height="2" fill="#f7f5f2"/>
+  <rect x="173" y="98" width="14" height="2" fill="#f7f5f2"/>
+  
+  <!-- Mobile content - stacked -->
+  <rect x="70" y="118" width="120" height="50" rx="3" fill="#2a5a8c" opacity="0.3"/>
+  <text x="130" y="147" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a3a5c">Hero Image</text>
+  
+  <rect x="70" y="175" width="120" height="8" rx="2" fill="#d4d0ca"/>
+  <rect x="70" y="188" width="100" height="6" rx="2" fill="#edeae5"/>
+  <rect x="70" y="198" width="110" height="6" rx="2" fill="#edeae5"/>
+  
+  <!-- Mobile cards stacked -->
+  <rect x="70" y="215" width="120" height="40" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="130" y="238" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#5a5a5a">Card 1</text>
+  <rect x="70" y="260" width="120" height="40" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="130" y="283" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#5a5a5a">Card 2</text>
+  <rect x="70" y="305" width="120" height="40" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="130" y="328" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#5a5a5a">Card 3</text>
+  
+  <!-- Mobile expanded menu overlay -->
+  <text x="130" y="370" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#5a5a5a" font-style="italic">Hamburger reveals</text>
+  <text x="130" y="382" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#5a5a5a" font-style="italic">vertical nav menu</text>
+  
+  <!-- Mobile footer -->
+  <rect x="62" y="440" width="136" height="30" fill="#162d47"/>
+  <text x="130" y="458" text-anchor="middle" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Footer links</text>
+  
+  <!-- Arrow -->
+  <text x="310" y="290" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#e8913a">&#8594;</text>
+  <text x="310" y="310" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#5a5a5a">Responsive</text>
+  <text x="310" y="322" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#5a5a5a">breakpoints</text>
+
+  <!-- DESKTOP MOCKUP (right side) -->
+  <text x="560" y="55" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5a5a">Desktop (&gt; 960px)</text>
+  <!-- Desktop frame -->
+  <rect x="365" y="65" width="400" height="280" rx="6" fill="#2c2c2c" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="372" y="80" width="386" height="250" fill="#f7f5f2"/>
+  
+  <!-- Desktop header with horizontal nav -->
+  <rect x="372" y="80" width="386" height="28" fill="#1a3a5c"/>
+  <text x="400" y="98" font-family="sans-serif" font-size="8" fill="#f7f5f2">SSLC</text>
+  <text x="520" y="97" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Home</text>
+  <text x="560" y="97" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Our Role</text>
+  <text x="610" y="97" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Members</text>
+  <text x="660" y="97" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Meetings</text>
+  <text x="710" y="97" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.7)">Contact</text>
+  
+  <!-- Desktop hero -->
+  <rect x="380" y="115" width="370" height="60" rx="3" fill="#2a5a8c" opacity="0.3"/>
+  <text x="565" y="150" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1a3a5c">Hero Section (full width)</text>
+  
+  <!-- Desktop cards in 3-column grid -->
+  <rect x="380" y="185" width="115" height="50" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="437" y="213" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#5a5a5a">Card 1</text>
+  <rect x="505" y="185" width="115" height="50" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="562" y="213" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#5a5a5a">Card 2</text>
+  <rect x="630" y="185" width="115" height="50" rx="3" fill="#ffffff" stroke="#d4d0ca" stroke-width="1"/>
+  <text x="687" y="213" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#5a5a5a">Card 3</text>
+  
+  <!-- Desktop text content -->
+  <rect x="380" y="245" width="250" height="6" rx="2" fill="#d4d0ca"/>
+  <rect x="380" y="256" width="200" height="5" rx="2" fill="#edeae5"/>
+  <rect x="380" y="266" width="230" height="5" rx="2" fill="#edeae5"/>
+  
+  <!-- Desktop footer -->
+  <rect x="372" y="300" width="386" height="30" fill="#162d47"/>
+  <text x="565" y="318" text-anchor="middle" font-family="sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">Accessibility | Legal &amp; Security | Design | Testing</text>
+  
+  <!-- Breakpoint annotations -->
+  <text x="400" y="380" font-family="sans-serif" font-size="10" fill="#1a3a5c" font-weight="bold">Breakpoints:</text>
+  <text x="400" y="396" font-family="sans-serif" font-size="9" fill="#5a5a5a">&#8226; 600px — Tablet: 2-col grid, wider spacing</text>
+  <text x="400" y="412" font-family="sans-serif" font-size="9" fill="#5a5a5a">&#8226; 960px — Desktop: horizontal nav, 3-col grid</text>
+  <text x="400" y="428" font-family="sans-serif" font-size="9" fill="#5a5a5a">&#8226; 1200px — Tweakpoint: extra padding for large screens</text>
+  
+  <!-- Key design notes -->
+  <text x="400" y="456" font-family="sans-serif" font-size="10" fill="#1a3a5c" font-weight="bold">Key Decisions:</text>
+  <text x="400" y="472" font-family="sans-serif" font-size="9" fill="#5a5a5a">&#8226; Hamburger menu (checkbox hack) on mobile, horizontal bar on desktop</text>
+  <text x="400" y="488" font-family="sans-serif" font-size="9" fill="#5a5a5a">&#8226; Cards stack vertically on mobile, grid on wider screens</text>
+</svg>

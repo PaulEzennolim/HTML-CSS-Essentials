@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <!-- Committee meeting illustration - original hand-drawn style SVG -->
+  <rect width="600" height="300" rx="8" fill="#2a5a8c"/>
+  <!-- Table -->
+  <ellipse cx="300" cy="200" rx="200" ry="40" fill="#1a3a5c" opacity="0.5"/>
+  <rect x="120" y="160" width="360" height="20" rx="4" fill="#c77a2e"/>
+  <!-- People around table (simplified figures) -->
+  <!-- Person 1 -->
+  <circle cx="160" cy="120" r="18" fill="#f7f5f2"/>
+  <rect x="148" y="140" width="24" height="30" rx="4" fill="#e8913a"/>
+  <!-- Person 2 -->
+  <circle cx="240" cy="110" r="18" fill="#f7f5f2"/>
+  <rect x="228" y="130" width="24" height="30" rx="4" fill="#3a8c5c"/>
+  <!-- Person 3 -->
+  <circle cx="360" cy="110" r="18" fill="#f7f5f2"/>
+  <rect x="348" y="130" width="24" height="30" rx="4" fill="#8c3a5c"/>
+  <!-- Person 4 -->
+  <circle cx="440" cy="120" r="18" fill="#f7f5f2"/>
+  <rect x="428" y="140" width="24" height="30" rx="4" fill="#3a5c8c"/>
+  <!-- Speech bubbles -->
+  <ellipse cx="200" cy="80" rx="40" ry="18" fill="rgba(255,255,255,0.2)"/>
+  <ellipse cx="400" cy="75" rx="35" ry="16" fill="rgba(255,255,255,0.15)"/>
+  <!-- Documents on table -->
+  <rect x="260" y="148" width="20" height="14" rx="1" fill="#f7f5f2" opacity="0.7"/>
+  <rect x="320" y="148" width="20" height="14" rx="1" fill="#f7f5f2" opacity="0.7"/>
+  <!-- Title text -->
+  <text x="300" y="260" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#f7f5f2">Your Voice Matters</text>
+  <text x="300" y="285" text-anchor="middle" font-family="serif" font-size="14" fill="rgba(255,255,255,0.7)">Staff-Student Liaison Committee</text>
+</svg>

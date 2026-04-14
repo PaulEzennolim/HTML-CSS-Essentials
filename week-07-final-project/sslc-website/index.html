@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+  index.html - Home Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: The home page for the Staff-Student Liaison Committee (SSLC) website.
+  This page welcomes visitors and provides an overview of what the SSLC does.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport meta tag is essential for mobile-first responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Welcome to the Staff-Student Liaison Committee website for the Department of Computer Science.">
+  <title>Home | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard/screen-reader accessibility -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =============================================
+       SITE HEADER
+       Contains logo, hamburger toggle, and main nav.
+       The nav uses the checkbox hack for responsive
+       behaviour without JavaScript.
+       ============================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="logo-area">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </span>
+
+      <!--
+        Checkbox hack: this hidden checkbox controls the nav visibility.
+        The label acts as the hamburger button. When checked, CSS reveals the nav.
+      -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span class="sr-only">Menu</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================================
+       MAIN CONTENT
+       Hero section followed by informational cards.
+       ============================================= -->
+  <main id="main-content">
+
+    <!-- Hero section: large banner with welcome message and committee image -->
+    <section class="hero" aria-label="Welcome banner">
+      <h1>Welcome to the Staff-Student Liaison Committee</h1>
+      <p>
+        We are the bridge between students and staff in the Department of Computer Science.
+        Your voice matters &mdash; and we are here to make sure it is heard.
+      </p>
+      <img src="images/hero-meeting.svg" alt="Illustration of committee members gathered around a table for a meeting" class="hero-image" width="600" height="300">
+    </section>
+
+    <!-- Information cards: highlight key areas of the committee -->
+    <section class="info-cards" aria-label="Key information about the SSLC">
+
+      <article class="info-card">
+        <!-- Using Unicode for decorative icons to avoid external dependencies -->
+        <span class="card-icon" aria-hidden="true">&#128172;</span>
+        <h2>Your Voice</h2>
+        <p>
+          We collect and represent student feedback on teaching, facilities,
+          and the overall student experience to ensure your concerns are addressed.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <span class="card-icon" aria-hidden="true">&#129309;</span>
+        <h2>Collaboration</h2>
+        <p>
+          Our committee brings together elected student representatives and
+          academic staff to work on meaningful improvements together.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <span class="card-icon" aria-hidden="true">&#128221;</span>
+        <h2>Transparency</h2>
+        <p>
+          All meeting minutes and agendas are available on this site.
+          We believe in open communication and accountability.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Additional welcome content -->
+    <section class="content-section">
+      <h2>About the SSLC</h2>
+      <p>
+        The Staff-Student Liaison Committee (SSLC) is an essential part of the
+        Department of Computer Science at the University of Sheffield. We meet
+        regularly throughout the academic year to discuss matters that affect the
+        student experience, from module content and assessment methods to
+        facilities and wellbeing support.
+      </p>
+      <p>
+        Whether you have a suggestion, a concern, or praise for something that
+        is working well, we encourage you to get in touch. You can also attend
+        our open meetings or speak directly to your
+        <a href="membership.html">year representative</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       SITE FOOTER
+       Contains secondary navigation (accessibility,
+       legal, design, testing) and copyright info.
+       ============================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+  testing.html - Testing Documentation Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Documents the testing process including optimisation, HTML/CSS
+  validation, cross-browser testing, and accessibility testing with WAVE.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Testing documentation for the SSLC website.">
+  <title>Testing | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Testing</h1>
+      <p>Validation, browser testing, and accessibility audit results</p>
+    </div>
+
+    <!-- Section 1: Optimisation -->
+    <section class="content-section">
+      <h2>Optimisation</h2>
+      <p>
+        All images use SVG format, which is resolution-independent and typically
+        smaller than raster equivalents. SVG files are text-based and compress
+        well with gzip. Chrome DevTools&rsquo; Network tab was used to verify
+        page load performance: the home page loads in under 500ms on a simulated
+        3G connection, with total assets under 50KB.
+      </p>
+      <p>
+        CSS is consolidated into a single stylesheet (<code>style.css</code>)
+        to minimise HTTP requests. CSS custom properties avoid value repetition,
+        reducing file size. Shorthand properties (e.g. <code>margin</code>,
+        <code>padding</code>, <code>gap</code>) are used throughout for economy.
+      </p>
+      <img src="images/screenshot-network.png" alt="Screenshot of Chrome DevTools
+        Network tab showing page load performance" class="test-screenshot">
+    </section>
+
+    <!-- Section 2: Debugging / Validation -->
+    <section class="content-section">
+      <h2>Debugging &amp; Validation</h2>
+      <p>
+        All HTML pages were validated using the
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C HTML Validator</a>.
+        The CSS was validated using the
+        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">W3C CSS Validator</a>.
+      </p>
+      <p>
+        Initial validation revealed two issues: an <code>aria-label</code>
+        attribute used on a <code>&lt;label&gt;</code> element associated with
+        a labelable element (removed, as it is not permitted in this context),
+        and an <code>&lt;h3&gt;</code> heading that followed an
+        <code>&lt;h1&gt;</code>, skipping a heading level (changed to
+        <code>&lt;h2&gt;</code> for correct hierarchy). After corrections,
+        all pages and the stylesheet pass validation with zero errors.
+      </p>
+      <img src="images/screenshot-html-before.png"
+             alt="HTML validator showing 2 errors before fix" class="test-screenshot">
+      <img src="images/screenshot-html-after.png"
+             alt="HTML validator showing 0 errors after fix" class="test-screenshot">
+      <img src="images/screenshot-css-valid.png"
+             alt="CSS validator showing no errors" class="test-screenshot">
+    </section>
+
+    <!-- Section 3: Browser Testing -->
+    <section class="content-section">
+      <h2>Browser Testing</h2>
+      <p>
+        The website was tested on the latest versions of Chrome, Firefox,
+        and Safari. Chrome&rsquo;s Device Mode and Firefox&rsquo;s Responsive
+        Design Mode were used to emulate mobile devices (iPhone SE, Pixel 7,
+        iPad). Both tools produced consistent results: the hamburger menu
+        functions correctly, grids reflow at breakpoints, and content remains
+        readable at all tested widths from 320px to 1920px.
+      </p>
+      <p>
+        Minor rendering difference: Firefox applies slightly different default
+        padding on <code>&lt;summary&gt;</code> elements in the quiz section.
+        This was resolved by explicitly setting padding in the stylesheet,
+        ensuring consistent appearance across browsers.
+      </p>
+      <img src="images/screenshot-chrome-mobile.png"
+             alt="Website on Chrome mobile emulation at 375px width" class="test-screenshot">
+      <img src="images/screenshot-firefox-mobile.png"
+             alt="Website on Firefox responsive design mode at 375px width"
+             class="test-screenshot">
+      <img src="images/screenshot-chrome-desktop.png"
+             alt="Website on Chrome at 1920px width" class="test-screenshot">
+    </section>
+
+    <!-- Section 4: Accessibility Testing -->
+    <section class="content-section">
+      <h2>Accessibility Testing</h2>
+      <p>
+        All pages were tested using the
+        <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">WAVE (Web Accessibility Evaluation Tool)</a>
+        browser extension. Initial results flagged one error (an empty form label
+        on the hamburger menu toggle), one contrast error (the skip-to-content
+        link had a contrast ratio of 2.45:1 against its background), and two
+        alerts for redundant adjacent links. These were resolved by adding
+        screen-reader-only text to the menu label, changing the skip link
+        background to a higher-contrast colour, and removing duplicate links.
+        After these fixes, WAVE reports zero errors, zero contrast errors, and
+        zero alerts.
+      </p>
+      <p>
+        Keyboard navigation was tested manually: all interactive elements
+        (links, form inputs, menu toggle, details/summary) are reachable via
+        Tab, and the skip-to-content link functions correctly. The
+        <code>aria-current="page"</code> attribute correctly identifies the active
+        page in navigation for screen readers.
+      </p>
+      <img src="images/screenshot-wave-before.png"
+             alt="WAVE report showing 1 error and 1 contrast error before fixes" class="test-screenshot">
+      <img src="images/screenshot-wave-after.png"
+             alt="WAVE report showing 0 errors after fixes" class="test-screenshot">
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html" aria-current="page">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

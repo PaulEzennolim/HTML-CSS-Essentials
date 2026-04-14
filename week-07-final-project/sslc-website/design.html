@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+  design.html - Design Documentation Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Documents the mobile-first responsive web design approach,
+  including introduction, site map, mockups, design reasoning, and
+  menu system justification. Maximum 500 words (diagrams excluded).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Design documentation for the SSLC website.">
+  <title>Design | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Design</h1>
+      <p>How this website was designed using Mobile-First Responsive Web Design</p>
+    </div>
+
+    <!-- Section 1: Introduction -->
+    <section class="content-section">
+      <h2>Introduction</h2>
+      <p>
+        The design aims for a professional yet approachable aesthetic, reflecting
+        the committee&rsquo;s role as a bridge between students and staff. A warm
+        colour palette (navy, amber, off-white) conveys trust and openness.
+        The SSLC logo, featuring two figures with a connecting arc, appears on
+        every page to establish consistent branding. Every page shares the same
+        header, footer, and stylesheet for visual consistency.
+      </p>
+    </section>
+
+    <!-- Section 2: Site Map -->
+    <section class="content-section">
+      <h2>Site Map</h2>
+      <img src="images/sitemap.svg" alt="Site map diagram showing flat hierarchy: Home links to all pages. Header nav contains Home, Our Role, Members, Meetings and Papers, Contact. Footer nav contains Accessibility, Legal and Security, Design, Testing." class="design-image" width="700" height="400">
+      <p class="image-caption">Figure 1: Site map showing flat navigation structure</p>
+      <p>
+        A flat hierarchy was chosen because all nine pages are equally important
+        and should be reachable within one click. Separating primary content pages
+        (header nav) from documentation pages (footer nav) keeps the main menu
+        uncluttered while maintaining discoverability.
+      </p>
+    </section>
+
+    <!-- Section 3: Design Mockups -->
+    <section class="content-section">
+      <h2>Design Mockups</h2>
+      <img src="images/mockups.svg" alt="Wireframe mockups showing mobile view with hamburger menu and stacked content on the left, and desktop view with horizontal nav and three-column card grid on the right, connected by an arrow showing responsive transformation." class="design-image" width="800" height="500">
+      <p class="image-caption">Figure 2: Mobile and desktop wireframes showing responsive behaviour</p>
+      <p>
+        The mobile design stacks all content vertically with a hamburger menu.
+        The desktop design uses multi-column grids and a horizontal navigation
+        bar. The Membership, Meetings, and Contact pages follow similar patterns
+        to the Home page (single-column mobile, multi-column desktop) and are
+        not shown separately to avoid redundancy.
+      </p>
+    </section>
+
+    <!-- Section 4: Design Reasoning (Breakpoints) -->
+    <section class="content-section">
+      <h2>Design Reasoning</h2>
+      <p>
+        Two breakpoints and one tweakpoint are used, all defined with
+        <code>min-width</code> to follow the mobile-first approach:
+      </p>
+      <p>
+        <strong>600px (tablet):</strong> Content grids switch from one to two
+        columns. Quiz blocks display images beside text. Font sizes increase slightly.
+        This breakpoint targets tablets and small laptops where the extra width
+        benefits side-by-side layouts.
+      </p>
+      <p>
+        <strong>960px (desktop):</strong> The hamburger menu is replaced by a
+        horizontal navigation bar. Grids expand to three columns. The contact
+        page uses a two-column layout (address beside form). This threshold
+        was chosen as the point where a horizontal nav comfortably fits all
+        five menu items.
+      </p>
+      <p>
+        <strong>1200px (tweakpoint):</strong> Minor padding increases on the
+        hero and page title sections prevent excessively wide content on large
+        monitors.
+      </p>
+    </section>
+
+    <!-- Section 5: Menu System -->
+    <section class="content-section">
+      <h2>Menu System</h2>
+      <p>
+        Since JavaScript is not permitted, the responsive menu uses the
+        <strong>CSS checkbox hack</strong>: a hidden <code>&lt;input
+        type="checkbox"&gt;</code> paired with a <code>&lt;label&gt;</code>
+        styled as a hamburger icon. When checked, the adjacent
+        <code>&lt;nav&gt;</code> is revealed using <code>max-height</code>
+        transition. On desktop (&gt;960px), the hamburger is hidden via
+        <code>display: none</code> and the nav is always visible as a
+        horizontal bar. This approach was chosen over alternatives like
+        <code>:target</code> (which modifies the URL hash and disrupts
+        browser history) or <code>:focus-within</code> (which closes the menu
+        when clicking a link, causing usability issues).
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html" aria-current="page">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

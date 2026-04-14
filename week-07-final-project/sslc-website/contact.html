@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+  contact.html - Contact Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Contains the department address and a styled contact form.
+  The form uses mailto: for the action attribute as a demonstration.
+  On desktop, the address and form display side-by-side using CSS Grid
+  via the .contact-layout class.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Contact the Staff-Student Liaison Committee.">
+  <title>Contact | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Contact Us</h1>
+      <p>We want to hear from you &mdash; share your feedback and suggestions</p>
+    </div>
+
+    <section class="content-section">
+      <p>
+        Have a question, concern, or suggestion? Use the form below to send a
+        message to the committee. You can direct your comments to a specific
+        committee member or year group. We aim to respond within five working
+        days.
+      </p>
+    </section>
+
+    <!--
+      Contact layout: on desktop (>960px), this becomes a two-column grid
+      with the address on the left and the form on the right.
+      On mobile, they stack vertically.
+    -->
+    <div class="contact-layout">
+
+      <!-- Department address - uses the <address> semantic element -->
+      <section class="content-section">
+        <h2>Our Address</h2>
+        <address class="address-block">
+          Staff-Student Liaison Committee<br>
+          Department of Computer Science<br>
+          University of Sheffield<br>
+          Regent Court<br>
+          211 Portobello<br>
+          Sheffield<br>
+          S1 4DP<br>
+          United Kingdom
+        </address>
+
+      </section>
+
+      <!--
+        Contact form: uses mailto: action as a placeholder.
+        Form includes email input (type="email" for validation),
+        a select dropdown for directing comments, and a textarea.
+        All fields use associated <label> elements for accessibility.
+      -->
+      <section class="content-section">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" action="mailto:sslc@sheffield.ac.uk" method="post" enctype="text/plain">
+
+          <div class="form-group">
+            <label for="user-email">Your Email Address <span class="required" aria-label="required">*</span></label>
+            <input type="email" id="user-email" name="email" required
+                   placeholder="e.g. jsmith1@sheffield.ac.uk"
+                   aria-describedby="email-hint">
+            <p class="form-hint" id="email-hint">We will use this to reply to your message.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="comment-for">Direct Your Comments To <span class="required" aria-label="required">*</span></label>
+            <!--
+              Select element lets users choose who to direct feedback to.
+              This is more user-friendly than a free-text field for this purpose.
+            -->
+            <select id="comment-for" name="directed-to" required>
+              <option value="" disabled selected>Please select&hellip;</option>
+              <option value="general">General Committee</option>
+              <option value="chair">Committee Chair</option>
+              <option value="year1">Year 1 Representative</option>
+              <option value="year2">Year 2 Representative</option>
+              <option value="year3">Year 3 Representative</option>
+              <option value="year4">Year 4 / MSc Representative</option>
+              <option value="pgr">Postgraduate Research Representative</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="user-comments">Your Comments <span class="required" aria-label="required">*</span></label>
+            <textarea id="user-comments" name="comments" required
+                      placeholder="Tell us what's on your mind..."
+                      aria-describedby="comments-hint"></textarea>
+            <p class="form-hint" id="comments-hint">
+              Please be specific so we can address your feedback effectively.
+            </p>
+          </div>
+
+          <!--
+            Submit button: uses type="submit" which would normally trigger
+            the form action. Since action is mailto:, it will attempt to open
+            the user's email client with the form data pre-filled.
+          -->
+          <button type="submit" class="btn-submit">Send Message</button>
+
+        </form>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

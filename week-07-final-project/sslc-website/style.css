@@ -1,0 +1,958 @@
+/*
+  style.css - Main Stylesheet for SSLC Website
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Mobile-first responsive stylesheet for the Staff-Student
+  Liaison Committee website. Uses CSS custom properties for consistent
+  theming, the checkbox hack for a responsive hamburger menu (no JS),
+  and @media queries for breakpoints at 600px (tablet) and 960px (desktop).
+*/
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   Using variables for consistent theming across the site.
+   Changing these values will update the entire site's palette.
+   ============================================================ */
+:root {
+  --color-primary: #1a3a5c;       /* Deep navy - main brand color */
+  --color-primary-light: #2a5a8c; /* Lighter navy for hover states */
+  --color-accent: #e8913a;        /* Warm amber accent for CTAs */
+  --color-accent-dark: #c77a2e;   /* Darker amber for hover */
+  --color-bg: #f7f5f2;            /* Warm off-white background */
+  --color-bg-alt: #edeae5;        /* Slightly darker alt background */
+  --color-text: #2c2c2c;          /* Near-black for body text */
+  --color-text-light: #5a5a5a;    /* Muted text for secondary info */
+  --color-white: #ffffff;
+  --color-border: #d4d0ca;        /* Subtle warm border */
+  --color-success: #3a8c5c;       /* Green for success states */
+  --color-footer-bg: #162d47;     /* Darker navy for footer */
+
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-body: Georgia, 'Times New Roman', Times, serif;
+
+  --max-width: 1100px;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  --transition-speed: 0.3s;
+}
+
+/* ============================================================
+   RESET & BASE STYLES
+   Minimal reset for consistent cross-browser rendering.
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px base for accessibility */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent);
+}
+
+/* Focus styles for keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.8rem; margin-bottom: var(--spacing-md); }
+h2 { font-size: 1.4rem; margin: var(--spacing-lg) 0 var(--spacing-md); }
+h3 { font-size: 1.15rem; margin: var(--spacing-md) 0 var(--spacing-sm); }
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+ul, ol {
+  margin: 0 0 var(--spacing-md) var(--spacing-lg);
+}
+
+/* ============================================================
+   SKIP LINK
+   Accessibility: allows keyboard users to skip to main content.
+   Hidden off-screen until focused.
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--spacing-md);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  z-index: 1000;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================================
+   HEADER
+   Contains the logo/branding and the main navigation.
+   ============================================================ */
+.site-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo area - contains SVG logo and site title */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.logo-area:hover,
+.logo-area:focus {
+  color: var(--color-accent);
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   RESPONSIVE HAMBURGER MENU (Checkbox Hack)
+   Uses a hidden checkbox and a label styled as a hamburger icon.
+   When checkbox is checked, the nav menu slides into view.
+   This avoids the need for JavaScript entirely.
+   ============================================================ */
+
+/* Hide the checkbox off-screen but keep it accessible */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The hamburger icon label - visible only on mobile */
+.nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  gap: 5px;
+  padding: 4px;
+}
+
+/* Three bars of the hamburger icon */
+.nav-toggle-label span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+/* Animate hamburger to X when checked */
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation list - hidden by default on mobile, shown when checkbox checked */
+.main-nav {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.nav-toggle:checked ~ .main-nav {
+  max-height: 400px; /* Large enough to show all items */
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-sm) 0 0;
+}
+
+.main-nav li {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.75rem var(--spacing-sm);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  transition: background-color var(--transition-speed);
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: var(--color-primary-light);
+  color: var(--color-accent);
+}
+
+/* Highlight the current page in the nav */
+.main-nav a[aria-current="page"] {
+  border-left: 3px solid var(--color-accent);
+  background-color: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+}
+
+/* ============================================================
+   MAIN CONTENT AREA
+   flex: 1 pushes footer to the bottom on short pages.
+   ============================================================ */
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+  width: 100%;
+}
+
+/* Page title banner */
+.page-title {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-md)) var(--spacing-lg);
+  text-align: center;
+}
+
+.page-title h1 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-title p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* ============================================================
+   CONTENT SECTIONS
+   Used throughout the site for grouping related content.
+   ============================================================ */
+.content-section {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
+}
+
+.content-section h2:first-child {
+  margin-top: 0;
+}
+
+/* ============================================================
+   HOME PAGE SPECIFIC STYLES
+   Hero section and welcome content.
+   ============================================================ */
+.hero {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-white);
+  margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-md)) var(--spacing-lg);
+  border-radius: 0 0 8px 8px;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.hero-image {
+  max-width: 280px;
+  margin: var(--spacing-md) auto 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Info cards grid for the home page */
+.info-cards {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.info-card {
+  background: var(--color-white);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+  color: var(--color-primary);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+/* ============================================================
+   PURPOSE PAGE - QUIZ STYLES
+   Uses the <details>/<summary> HTML5 elements to reveal
+   answers without JavaScript. Transitions applied via CSS.
+   ============================================================ */
+.quiz-block {
+  background: var(--color-bg-alt);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  border: 2px solid var(--color-border);
+  transition: border-color var(--transition-speed);
+}
+
+.quiz-block:hover {
+  border-color: var(--color-accent);
+}
+
+.quiz-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto var(--spacing-md);
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+}
+
+/* Details/Summary for quiz answer reveal */
+.quiz-block details {
+  margin-top: var(--spacing-sm);
+}
+
+.quiz-block summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  padding: var(--spacing-sm);
+  background: var(--color-white);
+  border-radius: 4px;
+  transition: background-color var(--transition-speed);
+  list-style: none; /* Remove default triangle */
+}
+
+/* Custom marker for summary elements */
+.quiz-block summary::before {
+  content: "\25B6 "; /* Right-pointing triangle */
+  font-size: 0.8rem;
+  transition: transform var(--transition-speed);
+  display: inline-block;
+}
+
+.quiz-block details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.quiz-block summary:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* The revealed answer with a smooth appearance */
+.quiz-answer {
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  background: var(--color-white);
+  border-left: 4px solid var(--color-success);
+  border-radius: 0 4px 4px 0;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* ============================================================
+   MEMBERSHIP PAGE
+   Card layout for committee member profiles.
+   ============================================================ */
+.members-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.member-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: box-shadow var(--transition-speed);
+}
+
+.member-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Placeholder avatar circle */
+.member-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.member-info h3 {
+  margin: 0 0 2px;
+  font-size: 1.05rem;
+}
+
+.member-role {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.member-year {
+  font-size: 0.85rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+/* Vacant role styling */
+.member-card.vacant {
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.member-card.vacant .member-avatar {
+  background: var(--color-text-light);
+}
+
+/* ============================================================
+   MEETINGS PAGE
+   Timeline-style layout for meeting dates and documents.
+   ============================================================ */
+.meeting-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meeting-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.meeting-date {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+}
+
+.meeting-links {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.meeting-link {
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  background: var(--color-bg-alt);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.meeting-link:hover,
+.meeting-link:focus {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   CONTACT PAGE - FORM STYLES
+   Styled form using only HTML and CSS. The form's action
+   uses mailto: for demonstration purposes.
+   ============================================================ */
+.contact-form {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(42, 90, 140, 0.15);
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Required field indicator */
+.required {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-top: 4px;
+}
+
+/* Submit button */
+.btn-submit {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform 0.15s;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Address block styling */
+.address-block {
+  background: var(--color-bg-alt);
+  padding: var(--spacing-md);
+  border-radius: 6px;
+  border-left: 4px solid var(--color-primary);
+  font-style: normal;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   DESIGN & TESTING PAGES
+   Styles for mockup images and screenshot galleries.
+   ============================================================ */
+.design-image,
+.test-screenshot {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin: var(--spacing-md) 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+}
+
+/* Reference list styling for accessibility & legal pages */
+.reference-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reference-list li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.reference-list li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   FOOTER
+   Two-level footer: footer nav links and copyright info.
+   ============================================================ */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.footer-info {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-md);
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.text-center { text-align: center; }
+.sr-only {
+  /* Screen-reader only: visually hidden but accessible */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ============================================================
+   TABLET BREAKPOINT (min-width: 600px)
+   At this breakpoint: nav becomes horizontal, grids expand,
+   form fields widen, and spacing increases.
+   ============================================================ */
+@media screen and (min-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+
+  .hero h1 { font-size: 2.4rem; }
+  .hero-image { max-width: 360px; }
+
+  /* Info cards go to 2-column grid on tablets */
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Members grid becomes 2 columns */
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Content sections get more padding */
+  .content-section {
+    padding: var(--spacing-lg);
+  }
+
+  main {
+    padding: var(--spacing-lg);
+  }
+
+  /* Quiz blocks display image beside text on wider screens */
+  .quiz-block {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .quiz-image {
+    max-width: 200px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* ============================================================
+   DESKTOP BREAKPOINT (min-width: 960px)
+   At this breakpoint: nav becomes a full horizontal bar,
+   the hamburger is hidden, grids expand further, and
+   the layout uses maximum width.
+   ============================================================ */
+@media screen and (min-width: 960px) {
+  /* Hide hamburger toggle on desktop */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  /* Show nav as a horizontal bar regardless of checkbox state */
+  .main-nav {
+    max-height: none;
+    width: auto;
+    overflow: visible;
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 0;
+    padding: 0;
+  }
+
+  .main-nav li {
+    border-top: none;
+  }
+
+  .main-nav a {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .main-nav a[aria-current="page"] {
+    border-left: none;
+    border-bottom: 3px solid var(--color-accent);
+  }
+
+  .header-inner {
+    flex-wrap: nowrap;
+  }
+
+  /* Three-column info cards on desktop */
+  .info-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Two-column layout for contact page: address + form side-by-side */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+  }
+
+  /* Members grid 3 columns on desktop */
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h1 { font-size: 2.5rem; }
+  .hero h1 { font-size: 2.8rem; }
+  .hero-image { max-width: 420px; }
+
+  main {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+/* ============================================================
+   TWEAKPOINT: Extra-large screens (min-width: 1200px)
+   Minor adjustments for very wide displays.
+   ============================================================ */
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .page-title {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   Basic print-friendly adjustments: hide nav, lighten bg.
+   ============================================================ */
+@media print {
+  .site-header,
+  .site-footer,
+  .nav-toggle-label {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  main {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  /* Show URLs after links in print */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+}

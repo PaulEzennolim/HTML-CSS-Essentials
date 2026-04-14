@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <!-- Quiz image: People collaborating / teamwork -->
+  <rect width="400" height="250" rx="6" fill="#edeae5"/>
+  <!-- Hands joining in center (teamwork symbol) -->
+  <circle cx="200" cy="125" r="60" fill="#1a3a5c" opacity="0.1"/>
+  <!-- Four arms reaching to center -->
+  <path d="M120 80 L180 115" stroke="#1a3a5c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M280 80 L220 115" stroke="#e8913a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M120 170 L180 135" stroke="#3a8c5c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M280 170 L220 135" stroke="#8c3a5c" stroke-width="8" stroke-linecap="round"/>
+  <!-- Hands (circles at ends) -->
+  <circle cx="180" cy="115" r="10" fill="#1a3a5c"/>
+  <circle cx="220" cy="115" r="10" fill="#e8913a"/>
+  <circle cx="180" cy="135" r="10" fill="#3a8c5c"/>
+  <circle cx="220" cy="135" r="10" fill="#8c3a5c"/>
+  <!-- People heads -->
+  <circle cx="110" cy="65" r="15" fill="#1a3a5c"/>
+  <circle cx="290" cy="65" r="15" fill="#e8913a"/>
+  <circle cx="110" cy="185" r="15" fill="#3a8c5c"/>
+  <circle cx="290" cy="185" r="15" fill="#8c3a5c"/>
+  <text x="200" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#5a5a5a">Collaboration in action</text>
+</svg>

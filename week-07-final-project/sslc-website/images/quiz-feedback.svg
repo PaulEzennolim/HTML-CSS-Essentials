@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <!-- Quiz image: Suggestion/feedback box -->
+  <rect width="400" height="250" rx="6" fill="#edeae5"/>
+  <!-- Suggestion box -->
+  <rect x="130" y="80" width="140" height="120" rx="8" fill="#1a3a5c"/>
+  <rect x="160" y="110" width="80" height="8" rx="2" fill="#2a5a8c"/>
+  <text x="200" y="170" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f7f5f2">FEEDBACK</text>
+  <!-- Slot on top -->
+  <rect x="165" y="76" width="70" height="10" rx="2" fill="#c77a2e"/>
+  <!-- Paper going in -->
+  <rect x="178" y="40" width="44" height="50" rx="2" fill="#f7f5f2" stroke="#d4d0ca" stroke-width="1" transform="rotate(-5, 200, 65)"/>
+  <line x1="185" y1="52" x2="215" y2="52" stroke="#d4d0ca" stroke-width="1"/>
+  <line x1="185" y1="60" x2="210" y2="60" stroke="#d4d0ca" stroke-width="1"/>
+  <line x1="185" y1="68" x2="205" y2="68" stroke="#d4d0ca" stroke-width="1"/>
+  <!-- Stars (representing positive feedback) -->
+  <text x="310" y="100" font-size="28" fill="#e8913a">&#9733;</text>
+  <text x="330" y="140" font-size="20" fill="#e8913a" opacity="0.6">&#9733;</text>
+  <text x="80" y="130" font-size="22" fill="#e8913a" opacity="0.4">&#9733;</text>
+  <text x="200" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#5a5a5a">Your feedback shapes change</text>
+</svg>

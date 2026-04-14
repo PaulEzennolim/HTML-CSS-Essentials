@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+  membership.html - Committee Members Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Lists all SSLC members and their roles using a card-based layout.
+  Vacant positions are shown with a dashed border to indicate they need filling.
+  No email addresses are included for privacy.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Meet the members of the Staff-Student Liaison Committee.">
+  <title>Members | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html" aria-current="page">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Committee Members</h1>
+      <p>Meet the people who represent your interests</p>
+    </div>
+
+    <!-- Staff members section -->
+    <section class="content-section">
+      <h2>Staff Members</h2>
+      <div class="members-grid">
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">FM</div>
+          <div class="member-info">
+            <h3>Dr Fatima Maikore</h3>
+            <p class="member-role">Committee Chair</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">SM</div>
+          <div class="member-info">
+            <h3>Dr Steve Maddock</h3>
+            <p class="member-role">Academic Staff Representative</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">JD</div>
+          <div class="member-info">
+            <h3>Dr James Davies</h3>
+            <p class="member-role">Director of Teaching</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">RP</div>
+          <div class="member-info">
+            <h3>Rachel Sherwood</h3>
+            <p class="member-role">Student Support Officer</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Student representatives section -->
+    <section class="content-section">
+      <h2>Student Representatives</h2>
+      <div class="members-grid">
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">AT</div>
+          <div class="member-info">
+            <h3>Alex Thompson</h3>
+            <p class="member-role">Student Representative</p>
+            <p class="member-year">Year 1</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">SC</div>
+          <div class="member-info">
+            <h3>Sarah Chen</h3>
+            <p class="member-role">Student Representative</p>
+            <p class="member-year">Year 2</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">MK</div>
+          <div class="member-info">
+            <h3>Mohammed Khan</h3>
+            <p class="member-role">Student Representative</p>
+            <p class="member-year">Year 3</p>
+          </div>
+        </article>
+
+        <!--
+          Vacant position: the .vacant class applies dashed border
+          and reduced opacity to visually indicate the role is unfilled.
+        -->
+        <article class="member-card vacant">
+          <div class="member-avatar" aria-hidden="true">?</div>
+          <div class="member-info">
+            <h3>Vacant</h3>
+            <p class="member-role">Student Representative</p>
+            <p class="member-year">Year 4 / MSc</p>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="member-avatar" aria-hidden="true">LP</div>
+          <div class="member-info">
+            <h3>Lena Petrov</h3>
+            <p class="member-role">Student Representative</p>
+            <p class="member-year">Postgraduate Research</p>
+          </div>
+        </article>
+
+        <article class="member-card vacant">
+          <div class="member-avatar" aria-hidden="true">?</div>
+          <div class="member-info">
+            <h3>Vacant</h3>
+            <p class="member-role">International Student Representative</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Information about becoming a representative -->
+    <section class="content-section">
+      <h2>Interested in Joining?</h2>
+      <p>
+        Student representative elections are held at the start of each academic year.
+        If a vacancy arises mid-year, a by-election will be organised. Speak to
+        your current representative or <a href="contact.html">contact us</a>
+        to find out more about becoming a student rep.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

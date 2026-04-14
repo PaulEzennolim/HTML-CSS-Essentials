@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+  purpose.html - Our Role / Purpose Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Explains what the SSLC does and includes a pictorial quiz
+  using HTML5 <details> and <summary> elements to reveal answers without JavaScript.
+  The title "Our Role" was chosen over "Purpose" as it is more user-friendly
+  and directly communicates what the page is about.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Learn about the role and purpose of the Staff-Student Liaison Committee.">
+  <title>Our Role | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html" aria-current="page">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Our Role</h1>
+      <p>What the Staff-Student Liaison Committee does and why it matters</p>
+    </div>
+
+    <!-- Overview section explaining the SSLC's purpose -->
+    <section class="content-section">
+      <h2>What Is the SSLC?</h2>
+      <p>
+        The Staff-Student Liaison Committee (SSLC) is a formal channel through which
+        students can raise issues, provide feedback, and contribute to decisions
+        that affect their academic experience. Every department in the University
+        of Sheffield has an SSLC, as required by the
+        <a href="https://www.sheffield.ac.uk/ssid" target="_blank" rel="noopener noreferrer">
+        University&rsquo;s Student Services</a>.
+      </p>
+      <p>
+        The committee meets at least once per semester and includes elected student
+        representatives from each year group alongside academic staff members. Issues
+        discussed include module content, assessment methods, timetabling, facilities,
+        and student welfare. Outcomes are recorded in official minutes and shared with
+        the department.
+      </p>
+    </section>
+
+    <!--
+      QUIZ SECTION
+      Three pictorial quiz questions using <details> and <summary> for answer reveal.
+      This approach was chosen over :hover because it works on touch devices and is
+      more accessible — screen readers can interact with details/summary natively.
+    -->
+    <section class="content-section">
+      <h2>Test Your Knowledge!</h2>
+      <p>
+        How much do you know about staff-student committees? Look at each image,
+        think of your answer, then click &ldquo;Reveal Answer&rdquo; to check.
+      </p>
+
+      <!-- Quiz 1: Teamwork -->
+      <div class="quiz-block">
+        <img src="images/quiz-teamwork.svg" alt="Illustration showing four people joining hands in a collaborative gesture" class="quiz-image" width="400" height="250">
+        <div>
+          <p class="quiz-question">
+            Question 1: This image shows people working together. What is the
+            main benefit of having both staff AND students on the committee?
+          </p>
+          <details>
+            <summary>Reveal Answer</summary>
+            <p class="quiz-answer">
+              Having both staff and students ensures that decisions are informed
+              by multiple perspectives. Students bring first-hand experience of
+              courses, while staff provide institutional context and the power
+              to implement changes.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Quiz 2: Feedback -->
+      <div class="quiz-block">
+        <img src="images/quiz-feedback.svg" alt="Illustration of a suggestion box with a piece of paper being submitted" class="quiz-image" width="400" height="250">
+        <div>
+          <p class="quiz-question">
+            Question 2: This shows a feedback box. Name two ways students can
+            submit feedback to the SSLC besides attending meetings.
+          </p>
+          <details>
+            <summary>Reveal Answer</summary>
+            <p class="quiz-answer">
+              Students can: (a) contact their year representative directly,
+              (b) use the contact form on this website, (c) email the committee,
+              or (d) submit anonymous feedback through the department&rsquo;s
+              online feedback system.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Quiz 3: Voice -->
+      <div class="quiz-block">
+        <img src="images/quiz-voice.svg" alt="Illustration of a person speaking through a megaphone with words like Change, Support, and Action emerging" class="quiz-image" width="400" height="250">
+        <div>
+          <p class="quiz-question">
+            Question 3: This person is making their voice heard. What happens
+            after an issue is raised at an SSLC meeting?
+          </p>
+          <details>
+            <summary>Reveal Answer</summary>
+            <p class="quiz-answer">
+              The issue is recorded in the meeting minutes. Relevant staff
+              members are assigned actions to address it. Progress is reviewed
+              at the following meeting to ensure accountability and follow-through.
+            </p>
+          </details>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Additional links and resources -->
+    <section class="content-section">
+      <h2>Useful Links</h2>
+      <ul>
+        <li>
+          <a href="https://www.sheffield.ac.uk/union/your-voice/academic-reps" target="_blank" rel="noopener noreferrer">
+            Sheffield Students&rsquo; Union &ndash; Academic Reps
+          </a>
+        </li>
+        <li>
+          <a href="https://sites.google.com/sheffield.ac.uk/comughandbook/departmental-policies-guidance/studentrepresentation/staffstudent-liaison-committee" target="_blank" rel="noopener noreferrer">
+            Department of Computer Science &ndash; SSLC Information
+          </a>
+        </li>
+        <li>
+          <a href="https://www.qaa.ac.uk/quality-code" target="_blank" rel="noopener noreferrer">
+            QAA UK Quality Code for Higher Education
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

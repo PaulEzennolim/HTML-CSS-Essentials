@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+  legal.html - Legal & Security Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Addresses legal issues (copyright, GDPR) and security
+  considerations (form data handling) for the website.
+  Maximum 250 words (excluding references).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="Legal and security information for the SSLC website.">
+  <title>Legal &amp; Security | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Legal &amp; Security</h1>
+      <p>How we address legal obligations and protect your data</p>
+    </div>
+
+    <!--
+      Using <article> within <section> as each topic area is
+      a self-contained piece of content about a distinct legal area.
+    -->
+
+    <!-- Copyright Section -->
+    <section class="content-section">
+      <h2>Copyright</h2>
+      <article>
+        <p>
+          All SVG illustrations on this site are original works created by the
+          author. No third-party images requiring licensing are used. The
+          SSLC logo is an original design. Content is &copy; 2024 Paul Ezennolim
+          unless otherwise stated. Under the
+          <a href="https://www.legislation.gov.uk/ukpga/1988/48/contents" target="_blank" rel="noopener noreferrer">Copyright, Designs and Patents Act 1988</a>,
+          original works are automatically protected.
+        </p>
+      </article>
+    </section>
+
+    <!-- GDPR Section -->
+    <section class="content-section">
+      <h2>Data Protection (GDPR)</h2>
+      <article>
+        <p>
+          This website does not use cookies, tracking scripts, or analytics.
+          The contact form collects an email address and comments solely to
+          respond to user enquiries. This constitutes &ldquo;legitimate
+          interest&rdquo; processing under
+          <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/" target="_blank" rel="noopener noreferrer">UK GDPR</a>.
+          No data is stored on a server; the form uses <code>mailto:</code>
+          which opens the user&rsquo;s email client directly.
+          Personal data (committee member names) is published with consent
+          and limited to names and roles only&mdash;no email addresses or
+          phone numbers are displayed.
+        </p>
+      </article>
+    </section>
+
+    <!-- Security Section -->
+    <section class="content-section">
+      <h2>Security Considerations</h2>
+      <article>
+        <p>
+          The contact form uses <code>mailto:</code>, meaning data is transmitted
+          via the user&rsquo;s own email client rather than a server-side script.
+          This avoids risks associated with server-side data storage and
+          injection attacks. In a production environment, a secure server-side
+          handler with HTTPS, input validation, and
+          <a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noopener noreferrer">CSRF protection</a>
+          would be recommended. All external links use
+          <code>rel="noopener noreferrer"</code> to prevent
+          <a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing" target="_blank" rel="noopener noreferrer">reverse tabnabbing</a>.
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html" aria-current="page">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

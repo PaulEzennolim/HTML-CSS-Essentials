@@ -14,6 +14,7 @@ A structured, week-by-week curriculum covering fundamental HTML and CSS concepts
   - [Week 04 - Multi-Page Website](#week-04---multi-page-website)
   - [Week 05 - Responsive Web Design](#week-05---responsive-web-design)
   - [Week 06 - Forms](#week-06---forms)
+  - [Week 07 - Final Project](#week-07---final-project)
 - [Concepts Covered](#concepts-covered)
 - [How to Use](#how-to-use)
 - [License](#license)
@@ -29,7 +30,8 @@ HTML-CSS-Essentials/
 ├── week-03-one-page-website/     # Single-page layout project
 ├── week-04-multipage-website/    # Full multi-page site project
 ├── week-05-resposive-web-design/ # Media queries and responsive layout
-└── week-06-forms/                # Form structure and styling
+├── week-06-forms/                # Form structure and styling
+└── week-07-final-project/        # Final project: SSLC website
 ```
 
 ---
@@ -164,6 +166,44 @@ A clean, accessible form for collecting user likes and dislikes.
 - Styled submit button with hover state
 
 **Concepts:** Form elements (`<input>`, `<fieldset>`, `<legend>`, `<label>`, `<button>`), accessibility in forms, CSS card layout, `box-shadow`, `border-radius`.
+
+---
+
+### Week 07 - Final Project
+
+A fully responsive, accessible website for the Department of Computer Science Staff-Student Liaison Committee (SSLC). Built mobile-first with a single shared stylesheet, semantic HTML, and no JavaScript.
+
+#### Pages
+
+| File | Description |
+|---|---|
+| `index.html` | Home page with hero banner, info cards, and welcome content |
+| `purpose.html` | Committee role overview with interactive quiz (details/summary) |
+| `membership.html` | Committee members with roles and responsibilities |
+| `meetings.html` | Meeting schedules, agendas, and minutes |
+| `contact.html` | Contact form with accessible inputs and fieldsets |
+| `accessibility.html` | Accessibility statement documenting WCAG compliance |
+| `design.html` | Design rationale, colour scheme, site map, and mockups |
+| `testing.html` | Testing documentation with validation, browser, and WAVE audit results |
+| `legal.html` | Copyright, GDPR compliance, and licensing information |
+
+#### Stylesheet
+
+| File | Description |
+|---|---|
+| `style.css` | Mobile-first responsive stylesheet with CSS custom properties, three breakpoints (600px, 900px, 1200px), and dark navy/amber colour scheme |
+
+**Highlights:**
+- Mobile-first responsive design with hamburger menu (CSS checkbox hack, no JavaScript)
+- CSS custom properties for consistent theming across all pages
+- SVG images throughout for resolution independence and small file sizes
+- Full WCAG accessibility: skip link, `aria-label`, `aria-current="page"`, screen-reader-only utility class
+- W3C HTML and CSS validation with zero errors
+- WAVE accessibility audit with zero errors, zero contrast errors, and zero alerts
+- Cross-browser tested on Chrome, Firefox, and Safari at widths from 320px to 1920px
+- GDPR-compliant contact form and data handling documentation
+
+**Concepts:** Mobile-first design, CSS custom properties, responsive navigation (checkbox hack), SVG graphics, WCAG accessibility, ARIA attributes, W3C validation, WAVE testing, cross-browser compatibility, GDPR compliance.
 
 ---
 

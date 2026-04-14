@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+  meetings.html - Meetings & Papers Page
+  Author: Paul Ezennolim
+  Date: November 2024
+  Description: Lists scheduled meetings with links to agendas and minutes.
+  Uses a timeline-style list layout with left borders for visual hierarchy.
+  Links are placeholders as per assignment requirements.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paul Ezennolim">
+  <meta name="description" content="SSLC meeting dates, agendas and minutes.">
+  <title>Meetings &amp; Papers | SSLC - Computer Science</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area" aria-label="SSLC Home">
+        <img src="images/logo.svg" alt="SSLC Logo" class="logo-img" width="40" height="40">
+        <span class="logo-text">CS SSLC</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="purpose.html">Our Role</a></li>
+          <li><a href="membership.html">Members</a></li>
+          <li><a href="meetings.html" aria-current="page">Meetings &amp; Papers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-title">
+      <h1>Meetings &amp; Papers</h1>
+      <p>View upcoming meeting dates and access committee documents</p>
+    </div>
+
+    <!-- Current academic year meetings -->
+    <section class="content-section">
+      <h2>2024&ndash;25 Academic Year</h2>
+      <p>
+        All meetings are held in the Diamond building, Room DIA-LT05, from
+        1:00pm to 2:00pm unless otherwise stated. Students and staff are
+        welcome to attend.
+      </p>
+
+      <!--
+        Meeting list: using an unordered list with custom styling.
+        Each meeting item has a left border accent for visual structure.
+        Links are placeholders (#) as actual documents are not required.
+      -->
+      <ul class="meeting-list">
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 1 &mdash; Wednesday 18 October 2024</p>
+          <p>Welcome meeting and introductions for new representatives.</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 2 &mdash; Wednesday 22 November 2024</p>
+          <p>Mid-semester review: module feedback and facilities update.</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 3 &mdash; Wednesday 7 February 2025</p>
+          <p>Semester 2 planning and assessment feedback review.</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes &ndash; Pending</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 4 &mdash; Wednesday 26 March 2025</p>
+          <p>End-of-year review and handover planning.</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda &ndash; TBC</a>
+            <a href="#" class="meeting-link">Minutes &ndash; TBC</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Previous year archive -->
+    <section class="content-section">
+      <h2>2023&ndash;24 Archive</h2>
+      <ul class="meeting-list">
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 1 &mdash; 11 October 2023</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 2 &mdash; 15 November 2023</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 3 &mdash; 14 February 2024</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+        <li class="meeting-item">
+          <p class="meeting-date">Meeting 4 &mdash; 20 March 2024</p>
+          <div class="meeting-links">
+            <a href="#" class="meeting-link">Agenda (PDF)</a>
+            <a href="#" class="meeting-link">Minutes (PDF)</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="legal.html">Legal &amp; Security</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="testing.html">Testing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>&copy; 2024 Paul Ezennolim | Department of Computer Science, University of Sheffield</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
